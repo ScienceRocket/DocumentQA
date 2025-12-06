@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "npx tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "test": "vitest",
-    "test:ui": "vitest --ui"
-  },
+  "dev": "vite",
+  "build": "node ./node_modules/typescript/bin/tsc --noEmit && vite build",
+  "preview": "vite preview",
+  "test": "vitest",
+  "test:ui": "vitest --ui"
+},
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
