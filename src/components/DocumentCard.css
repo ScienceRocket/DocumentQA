@@ -1,0 +1,172 @@
+.document-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  background-color: var(--bg-primary);
+}
+
+.document-card:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-color);
+}
+
+.document-card.selected {
+  background-color: rgba(0, 123, 255, 0.1);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 1px var(--accent-primary);
+}
+
+.document-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--bg-tertiary);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.file-icon {
+  font-size: 16px;
+}
+
+.document-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.document-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.document-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.document-size {
+  background-color: var(--bg-tertiary);
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.document-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.status-icon {
+  flex-shrink: 0;
+}
+
+.status-icon.ready {
+  color: var(--success);
+}
+
+.status-icon.error {
+  color: var(--error);
+}
+
+.status-icon.loading {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--text-muted);
+  border-radius: 50%;
+  border-top-color: var(--accent-primary);
+  animation: spin 1s linear infinite;
+}
+
+.status-text {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.document-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.document-card:hover .document-actions {
+  opacity: 1;
+}
+
+.document-view,
+.document-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.document-view:hover,
+.document-delete:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.document-delete:hover {
+  color: var(--error);
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .document-card {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .document-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .file-icon {
+    font-size: 14px;
+  }
+
+  .document-name {
+    font-size: 13px;
+  }
+
+  .document-meta {
+    font-size: 10px;
+  }
+
+  .document-actions {
+    opacity: 1;
+  }
+}
